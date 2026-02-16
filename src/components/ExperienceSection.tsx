@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Rocket } from "lucide-react";
+import { GraduationCap, Rocket, ExternalLink } from "lucide-react";
 
 const timeline = [
   {
@@ -58,6 +58,19 @@ const ExperienceSection = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Certifications Button */}
+          <div className="text-center mt-10">
+            <a
+              href="https://drive.google.com/drive/folders/1tLAkhF1zgFdtkajMIau8tVU9je_DxjD0?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
+            >
+              View My NxtWave Certifications
+              <ExternalLink size={16} />
+            </a>
           </div>
         </motion.div>
       </div>
