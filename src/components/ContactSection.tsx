@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, Twitter, FileText } from "lucide-react";
 
 const contactLinks = [
   { icon: Mail, label: "Email", value: "baskar.sona46@gmail.com", href: "mailto:baskar.sona46@gmail.com" },
@@ -7,6 +7,7 @@ const contactLinks = [
   { icon: Github, label: "GitHub", value: "baskaran-devaki", href: "https://github.com/baskaran-devaki" },
   { icon: Linkedin, label: "LinkedIn", value: "baskarandevaki", href: "https://linkedin.com/in/baskarandevaki" },
   { icon: Twitter, label: "Twitter", value: "baskarandevaki", href: "https://twitter.com/baskarandevaki" },
+  { icon: FileText, label: "Resume", value: "View Resume", href: "https://drive.google.com/file/d/1QLL6liuQmyDNQrYnsOD3WpV33qKeV3Ab/view?usp=sharing" },
 ];
 
 const ContactSection = () => {
