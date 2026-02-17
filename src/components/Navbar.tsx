@@ -24,7 +24,7 @@ const Navbar = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer"
             >
               {link.label}
             </a>
@@ -52,7 +52,7 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary py-2 transition-colors cursor-pointer"
                 >
                   {link.label}
                 </a>
