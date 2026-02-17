@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Eye, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import baskaranImg from "@/assets/baskaran.jpg";
-
-const socialLinks = [
-  { icon: Github, href: "https://github.com/baskaran-devaki", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/baskarandevaki", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/baskarandevaki", label: "Twitter" },
-];
 
 const HeroSection = () => {
   return (
@@ -35,44 +29,9 @@ const HeroSection = () => {
             <h2 className="text-xl sm:text-2xl font-medium text-muted-foreground mb-4">
               Aspiring Full Stack Developer
             </h2>
-            <p className="text-muted-foreground max-w-lg mx-auto md:mx-0 mb-6 leading-relaxed">
+            <p className="text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed">
               Passionate about building scalable web applications with modern technologies. Turning ideas into elegant, functional digital experiences.
             </p>
-
-            {/* Social Media Icons */}
-            <div className="flex gap-3 justify-center md:justify-start mb-6">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.label}
-                  className="p-2.5 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  <social.icon size={20} />
-                </a>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a
-                href="https://drive.google.com/uc?export=download&id=1QLL6liuQmyDNQrYnsOD3WpV33qKeV3Ab"
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity cursor-pointer"
-              >
-                <Eye size={18} />
-                View My Resume
-              </a>
-              <a
-                href="mailto:baskar.sona46@gmail.com?subject=Portfolio%20Contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-semibold text-sm hover:bg-accent transition-colors cursor-pointer"
-              >
-                Get In Touch
-              </a>
-            </div>
           </motion.div>
 
           {/* Image */}
