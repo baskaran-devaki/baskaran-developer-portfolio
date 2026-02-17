@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowDown, Eye, Github, Linkedin, Twitter } from "lucide-react";
 import baskaranImg from "@/assets/baskaran.jpg";
 
 const socialLinks = [
@@ -63,7 +63,7 @@ const HeroSection = () => {
                 download
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity cursor-pointer"
               >
-                <Download size={18} />
+                <Eye size={18} />
                 View My Resume
               </a>
               <a
