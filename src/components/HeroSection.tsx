@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import baskaranImg from "@/assets/baskaran.jpg";
+
+const contactLinks = [
+  { icon: Github, href: "https://github.com/baskaran-devaki", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/in/baskarandevaki", label: "LinkedIn" },
+  { icon: Twitter, href: "https://twitter.com/baskarandevaki", label: "Twitter" },
+  { icon: Mail, href: "mailto:baskar.sona46@gmail.com", label: "Email" },
+];
 
 const HeroSection = () => {
   return (
@@ -50,6 +57,27 @@ const HeroSection = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Contact Icons */}
+        <motion.div
+          className="flex justify-center gap-4 mt-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          {contactLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              className="p-2.5 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+            >
+              <link.icon size={20} />
+            </a>
+          ))}
+        </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
