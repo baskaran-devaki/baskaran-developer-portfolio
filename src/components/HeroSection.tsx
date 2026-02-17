@@ -57,17 +57,22 @@ const HeroSection = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
-                href="https://drive.google.com/file/d/1QLL6liuQmyDNQrYnsOD3WpV33qKeV3Ab/view?usp=sharing"
+                href="https://drive.google.com/uc?export=download&id=1QLL6liuQmyDNQrYnsOD3WpV33qKeV3Ab"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity"
+                download
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity cursor-pointer"
               >
                 <Download size={18} />
                 Download Resume
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-semibold text-sm hover:bg-accent transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-semibold text-sm hover:bg-accent transition-colors cursor-pointer"
               >
                 Get In Touch
               </a>
