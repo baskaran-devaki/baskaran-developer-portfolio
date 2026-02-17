@@ -64,14 +64,10 @@ const HeroSection = () => {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-opacity cursor-pointer"
               >
                 <Download size={18} />
-                Download Resume
+                View My Resume
               </a>
               <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
+                href="mailto:baskar.sona46@gmail.com?subject=Portfolio%20Contact"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground font-semibold text-sm hover:bg-accent transition-colors cursor-pointer"
               >
                 Get In Touch
