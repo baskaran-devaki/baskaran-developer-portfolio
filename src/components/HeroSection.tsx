@@ -4,7 +4,7 @@ import baskaranImg from "@/assets/baskaran.jpg";
 
 const contactLinks = [
   { icon: Github, href: "https://github.com/baskaran-devaki", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/baskarandevaki", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/baskarandevaki", label: "LinkedIn" },
   { icon: Twitter, href: "https://twitter.com/baskarandevaki", label: "Twitter" },
   { icon: Mail, href: "mailto:baskar.sona46@gmail.com", label: "Email" },
 ];
