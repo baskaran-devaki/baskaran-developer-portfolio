@@ -31,6 +31,12 @@ const skillCategories = [
       { name: "VS Code", level: 90 },
     ],
   },
+  {
+    title: "Currently Learning",
+    skills: [
+      { name: "Generative AI", level: 30 },
+    ],
+  },
 ];
 
 const SkillsSection = () => {
