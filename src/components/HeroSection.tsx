@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { ArrowDown, FolderOpen, Download, MessageCircle } from "lucide-react";
 import baskaranImg from "@/assets/baskaran.jpg";
-
-const contactLinks = [
-  { icon: Github, href: "https://github.com/baskaran-devaki", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/baskarandevaki", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/baskarandevaki", label: "Twitter" },
-  { icon: Mail, href: "mailto:baskar.sona46@gmail.com", label: "Email" },
-];
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
