@@ -63,7 +63,7 @@ const ExperienceSection = () => {
           {/* Certifications Button */}
           <div className="text-center mt-10">
             <a
-              href="https://drive.google.com/drive/folders/1tLAkhF1zgFdtkajMIau8tVU9je_DxjD0?usp=sharing"
+              href="https://drive.google.com/drive/folders/1K32fF5bl9FSONCPoRnDJo3Rs4eDU5zj0?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary text-primary font-semibold text-sm hover:bg-primary hover:text-primary-foreground transition-colors"
