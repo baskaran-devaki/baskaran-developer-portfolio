@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { ArrowDown, FolderOpen, Download, MessageCircle } from "lucide-react";
 import baskaranImg from "@/assets/baskaran.jpg";
-
-const contactLinks = [
-  { icon: Github, href: "https://github.com/baskaran-devaki", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/baskarandevaki", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/baskarandevaki", label: "Twitter" },
-  { icon: Mail, href: "mailto:baskar.sona46@gmail.com", label: "Email" },
-];
+import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
@@ -58,25 +52,38 @@ const HeroSection = () => {
           </motion.div>
         </div>
 
-        {/* Contact Icons */}
+        {/* CTA Buttons */}
         <motion.div
-          className="flex justify-center gap-4 mt-10"
+          className="flex flex-wrap justify-center gap-4 mt-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          {contactLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={link.label}
-              className="p-2.5 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
-            >
-              <link.icon size={20} />
+          <Button
+            size="lg"
+            className="rounded-full shadow-lg hover:shadow-xl transition-shadow gap-2"
+            onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            <FolderOpen size={18} /> View Projects
+          </Button>
+          <Button
+            size="lg"
+            variant="outline"
+            className="rounded-full shadow-md hover:shadow-lg transition-shadow gap-2"
+            asChild
+          >
+            <a href="/Baskaran_R_Resume.docx" download>
+              <Download size={18} /> Download Resume
             </a>
-          ))}
+          </Button>
+          <Button
+            size="lg"
+            variant="secondary"
+            className="rounded-full shadow-md hover:shadow-lg transition-shadow gap-2"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            <MessageCircle size={18} /> Contact Me
+          </Button>
         </motion.div>
 
         {/* Scroll indicator */}

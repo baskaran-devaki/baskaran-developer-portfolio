@@ -246,9 +246,10 @@ const PodcastSection = () => {
           <div className="flex items-center justify-center gap-3 mb-2">
             <Mic className="text-primary" size={28} />
             <h2 className="text-3xl font-bold text-foreground">
-              Continuous Learning through Podcasts & Industry Insights
+              NxtWave Podcast
             </h2>
           </div>
+          <p className="text-muted-foreground text-sm mb-3">Continuous Learning through Podcasts & Industry Insights</p>
           <div className="w-12 h-1 bg-primary rounded mx-auto mb-4" />
           <Badge className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 text-sm px-4 py-1">
             🎧 Active Learner · {podcasts.length}+ Certificates
