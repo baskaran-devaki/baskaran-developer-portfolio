@@ -11,7 +11,7 @@ const contactLinks = [
   { icon: Github, label: "GitHub", value: "baskaran-devaki", href: "https://github.com/baskaran-devaki" },
   { icon: Linkedin, label: "LinkedIn", value: "baskarandevaki", href: "https://linkedin.com/in/baskarandevaki" },
   { icon: Twitter, label: "Twitter", value: "baskarandevaki", href: "https://twitter.com/baskarandevaki" },
-  { icon: FileText, label: "Resume", value: "View Resume", href: "https://drive.google.com/file/d/1QLL6liuQmyDNQrYnsOD3WpV33qKeV3Ab/view?usp=sharing" },
+  { icon: FileText, label: "Resume", value: "View Resume", href: "https://drive.google.com/file/d/1iKA5V7u6-vKOWb9mBDqHv0Zd7718lKv-/view?usp=sharing" },
 ];
 
 const ContactSection = () => {
