@@ -190,7 +190,7 @@ const ExperienceSection = () => {
                   <div className="p-2 rounded-lg bg-primary/10 text-primary">
                     <Award size={18} />
                   </div>
-                  <span className="text-xs text-muted-foreground">2024</span>
+                  <span className="text-xs text-muted-foreground">{cert.date}</span>
                 </div>
 
                 {/* Center: title + description */}
