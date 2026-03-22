@@ -20,51 +20,59 @@ const timeline = [
 const certificates = [
   {
     title: "Build Your Own Static Website",
-    tech: "HTML, CSS",
+    date: "Aug 17, 2023",
+    tech: "HTML, CSS, Bootstrap",
     description: "Built structured and styled web pages",
-    link: "https://drive.google.com/file/d/1UAOhp84RhQaM0omK1WnQk0iV4BYaOPGz/view",
+    link: "https://drive.google.com/file/d/1UAOhp84RhQaM0omK1WnQk0iV4BYaOPGz/view?usp=sharing",
   },
   {
     title: "Build Your Own Responsive Website",
-    tech: "CSS, Flexbox",
-    description: "Designed mobile-friendly responsive layouts",
-    link: "https://drive.google.com/file/d/1sgmRtuLZA-yFnfxupaaihnQxZ0I3VOx4/view",
+    date: "Apr 22, 2024",
+    tech: "Bootstrap, Flexbox",
+    description: "Designed mobile-friendly layouts",
+    link: "https://drive.google.com/file/d/1sgmRtuLZA-yFnfxupaaihnQxZ0I3VOx4/view?usp=sharing",
   },
   {
     title: "Programming Foundations with Python",
+    date: "Jun 20, 2024",
     tech: "Python",
-    description: "Learned programming basics and logic building",
-    link: "https://drive.google.com/file/d/1pMwenhyZeqnJlQFEfz2_F2Y1peqUtv-f/view",
-  },
-  {
-    title: "JavaScript Essentials",
-    tech: "JavaScript",
-    description: "Built dynamic and interactive web features",
-    link: "https://drive.google.com/file/d/1E0MU-CjVVyXDFOywx91Ouw1oo8c-OBPK/view",
-  },
-  {
-    title: "Developer Foundations",
-    tech: "Git, Tools",
-    description: "Understood development workflow and tools",
-    link: "https://drive.google.com/file/d/1dEuZiVWiYOSEWdJZSXkElMzys8fhKxNb/view",
-  },
-  {
-    title: "Responsive Web Design using Flexbox",
-    tech: "CSS Flexbox",
-    description: "Created flexible and modern layouts",
-    link: "https://drive.google.com/file/d/1eKIO8jg8Ffoqb2CE6QU80TUS2PtGuW-p/view",
-  },
-  {
-    title: "Introduction to Databases",
-    tech: "SQL",
-    description: "Learned database concepts and queries",
-    link: "https://drive.google.com/file/d/1IcYuHRXHKqPlUHjYhYp9p1kniG0D0prk/view",
+    description: "Learned programming basics",
+    link: "https://drive.google.com/file/d/1pMwenhyZeqnJlQFEfz2_F2Y1peqUtv-f/view?usp=sharing",
   },
   {
     title: "Build Your Own Dynamic Website",
-    tech: "JavaScript, APIs",
-    description: "Developed dynamic web applications",
-    link: "https://drive.google.com/file/d/1Vm3AQePe7fOzB6IWwyrmHR4yUx9_o7fz/view",
+    date: "Sep 07, 2024",
+    tech: "JavaScript",
+    description: "Built dynamic applications",
+    link: "https://drive.google.com/file/d/1E0MU-CjVVyXDFOywx91Ouw1oo8c-OBPK/view?usp=sharing",
+  },
+  {
+    title: "JavaScript Essentials",
+    date: "Nov 06, 2024",
+    tech: "JavaScript",
+    description: "Built dynamic web features",
+    link: "https://drive.google.com/file/d/1dEuZiVWiYOSEWdJZSXkElMzys8fhKxNb/view?usp=drive_link",
+  },
+  {
+    title: "Responsive Web Design using Flexbox",
+    date: "Nov 29, 2024",
+    tech: "CSS Flexbox",
+    description: "Created flexible layouts",
+    link: "https://drive.google.com/file/d/1IcYuHRXHKqPlUHjYhYp9p1kniG0D0prk/view?usp=drive_link",
+  },
+  {
+    title: "Developer Foundations",
+    date: "Dec 14, 2024",
+    tech: "Git, Command Line Tools",
+    description: "Learned development workflow",
+    link: "https://drive.google.com/file/d/1eKIO8jg8Ffoqb2CE6QU80TUS2PtGuW-p/view?usp=drive_link",
+  },
+  {
+    title: "Introduction to Databases",
+    date: "Mar 05, 2024",
+    tech: "SQL",
+    description: "Learned database queries",
+    link: "https://drive.google.com/file/d/1IcYuHRXHKqPlUHjYhYp9p1kniG0D0prk/view?usp=drive_link",
   },
 ];
 
@@ -81,7 +89,7 @@ const ExperienceSection = () => {
 
     const step = () => {
       if (!isPaused && el) {
-        scrollPos += 0.5;
+        scrollPos += 1.5;
         // Reset when we've scrolled through the first set
         if (scrollPos >= el.scrollWidth / 2) {
           scrollPos = 0;
@@ -182,7 +190,7 @@ const ExperienceSection = () => {
                   <div className="p-2 rounded-lg bg-primary/10 text-primary">
                     <Award size={18} />
                   </div>
-                  <span className="text-xs text-muted-foreground">2024</span>
+                  <span className="text-xs text-muted-foreground">{cert.date}</span>
                 </div>
 
                 {/* Center: title + description */}
