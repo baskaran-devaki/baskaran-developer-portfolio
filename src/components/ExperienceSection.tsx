@@ -89,7 +89,7 @@ const ExperienceSection = () => {
 
     const step = () => {
       if (!isPaused && el) {
-        scrollPos += 0.5;
+        scrollPos += 1.5;
         // Reset when we've scrolled through the first set
         if (scrollPos >= el.scrollWidth / 2) {
           scrollPos = 0;
