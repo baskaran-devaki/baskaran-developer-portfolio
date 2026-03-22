@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Rocket, Award, ExternalLink } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const timeline = [
   {
@@ -70,6 +70,33 @@ const certificates = [
 
 const ExperienceSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    let animationId: number;
+    let scrollPos = 0;
+
+    const step = () => {
+      if (!isPaused && el) {
+        scrollPos += 0.5;
+        // Reset when we've scrolled through the first set
+        if (scrollPos >= el.scrollWidth / 2) {
+          scrollPos = 0;
+        }
+        el.scrollLeft = scrollPos;
+      }
+      animationId = requestAnimationFrame(step);
+    };
+
+    animationId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationId);
+  }, [isPaused]);
+
+  // Duplicate cards for infinite loop
+  const allCerts = [...certificates, ...certificates];
 
   return (
     <section id="experience" className="py-20 bg-background">
@@ -132,41 +159,48 @@ const ExperienceSection = () => {
             </p>
           </motion.div>
 
-          {/* Certificate Cards - Horizontal Scroll */}
+          {/* Certificate Cards - Auto-scrolling infinite loop */}
           <div
             ref={scrollRef}
-            className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
+            className="flex gap-5 overflow-x-auto pb-4 scrollbar-hide"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {certificates.map((cert, i) => (
-              <motion.a
-                key={cert.title}
+            {allCerts.map((cert, i) => (
+              <a
+                key={`${cert.title}-${i}`}
                 href={cert.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="group snap-start shrink-0 w-[280px] rounded-xl border border-border bg-card p-5 cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] hover:border-primary/40"
+                className="group snap-start shrink-0 w-[280px] rounded-xl border border-border bg-card p-5 flex flex-col justify-between min-h-[180px] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] hover:border-primary/40"
               >
-                <div className="flex items-start justify-between mb-3">
+                {/* Top row: icon + date */}
+                <div className="flex items-start justify-between mb-4">
                   <div className="p-2 rounded-lg bg-primary/10 text-primary">
                     <Award size={18} />
                   </div>
-                  <ExternalLink size={14} className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="text-xs text-muted-foreground">2024</span>
                 </div>
-                <h4 className="font-semibold text-foreground text-sm leading-snug mb-1.5">
-                  {cert.title}
-                </h4>
-                <p className="text-xs text-muted-foreground mb-3">{cert.description}</p>
+
+                {/* Center: title + description */}
+                <div className="text-center flex-1 flex flex-col justify-center mb-4">
+                  <h4 className="font-semibold text-foreground text-sm leading-snug mb-1.5">
+                    {cert.title}
+                  </h4>
+                  <p className="text-xs text-muted-foreground">{cert.description}</p>
+                </div>
+
+                {/* Bottom row: tech + link icon */}
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-accent text-accent-foreground">
                     {cert.tech}
                   </span>
-                  <span className="text-xs text-muted-foreground">2024</span>
+                  <ExternalLink size={14} className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-              </motion.a>
+              </a>
             ))}
           </div>
         </motion.div>
