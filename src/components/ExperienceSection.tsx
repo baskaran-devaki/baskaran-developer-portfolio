@@ -72,7 +72,7 @@ const certificates = [
     date: "Mar 05, 2024",
     tech: "SQL",
     description: "Learned database queries",
-    link: "https://drive.google.com/file/d/1IcYuHRXHKqPlUHjYhYp9p1kniG0D0prk/view?usp=drive_link",
+    link: "https://drive.google.com/file/d/1Vm3AQePe7fOzB6IWwyrmHR4yUx9_o7fz/view?usp=drive_link",
   },
 ];
 
