@@ -1,56 +1,53 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Award } from "lucide-react";
-
-const projects = [
-  {
-    title: "Student Management System",
-    description:
-      "A full CRUD application for managing student records with add, edit, delete, and search functionality. Built with a clean UI and efficient data handling.",
-    tech: ["React", "Node.js", "MySQL", "CSS"],
-    github: "https://github.com/baskaran-devaki",
-  },
-  {
-    title: "BookMyShow Clone",
-    description:
-      "A feature-rich clone of the BookMyShow platform with movie listing, seat selection UI, and booking functionality. Responsive design with modern UI elements.",
-    tech: ["HTML", "CSS", "JavaScript", "React"],
-    github: "https://github.com/baskaran-devaki",
-  },
-  {
-    title: "Data Analytics Mega Workshop Project",
-    institution: "CCBP 4.0 Academy",
-    description:
-      "Developed an interactive dashboard using Power BI, Kaggle, and Excel, performing data cleaning, analysis, and visualization to extract actionable business insights.",
-    tech: ["Power BI", "Kaggle", "Excel", "Data Analytics"],
-    certificate: "https://drive.google.com/file/d/1v-nQqb_WU7xWU_7TYxslo2rWgakDWDRm/view?usp=sharing",
-  },
-  {
-    title: "UI/UX Mega Workshop Project",
-    institution: "CCBP 4.0 Academy",
-    description:
-      "Redesigned a complete application using Figma, applying user-centered design principles, creating design systems, and building interactive prototypes with modern UI/UX best practices.",
-    tech: ["Figma", "UI/UX Design", "Prototyping"],
-    certificate: "https://drive.google.com/file/d/1kD8BEK5nRiHuhH71ext4V8IM1ffpI_Wn/view?usp=sharing",
-  },
-  {
-    title: "MCP Mega Workshop Project",
-    institution: "CCBP 4.0 Academy",
-    description:
-      "Created prompt-driven AI workflows using Model Context Protocol, Cursor IDE, and Pipedream, integrating AI applications with seamless tool integrations.",
-    tech: ["MCP", "Cursor IDE", "Pipedream", "AI"],
-    certificate: "https://drive.google.com/file/d/14G1P1fwgrxSaQFtgt7qB5KaLiwbjkul6/view?usp=sharing",
-  },
-  {
-    title: "AI Workflows & Automations Workshop Project",
-    institution: "CCBP 4.0 Academy",
-    description:
-      "Built end-to-end automation workflows using Make.com, integrating AI agents, MCP servers, and APIs to create efficient systems for business process optimization.",
-    tech: ["Make.com", "AI Agents", "MCP Servers", "APIs"],
-    certificate: "https://drive.google.com/file/d/1BaA2BOCUFI7xDoos6MW48gc7O1YGoMzz/view?usp=sharing",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const ProjectsSection = () => {
+  const { t } = useLanguage();
+
+  const projects = [
+    {
+      title: t("projects.sms.title"),
+      description: t("projects.sms.desc"),
+      tech: ["React", "Node.js", "MySQL", "CSS"],
+      github: "https://github.com/baskaran-devaki",
+    },
+    {
+      title: t("projects.bms.title"),
+      description: t("projects.bms.desc"),
+      tech: ["HTML", "CSS", "JavaScript", "React"],
+      github: "https://github.com/baskaran-devaki",
+    },
+    {
+      title: t("projects.data.title"),
+      institution: "CCBP 4.0 Academy",
+      description: t("projects.data.desc"),
+      tech: ["Power BI", "Kaggle", "Excel", "Data Analytics"],
+      certificate: "https://drive.google.com/file/d/1v-nQqb_WU7xWU_7TYxslo2rWgakDWDRm/view?usp=sharing",
+    },
+    {
+      title: t("projects.uiux.title"),
+      institution: "CCBP 4.0 Academy",
+      description: t("projects.uiux.desc"),
+      tech: ["Figma", "UI/UX Design", "Prototyping"],
+      certificate: "https://drive.google.com/file/d/1kD8BEK5nRiHuhH71ext4V8IM1ffpI_Wn/view?usp=sharing",
+    },
+    {
+      title: t("projects.mcp.title"),
+      institution: "CCBP 4.0 Academy",
+      description: t("projects.mcp.desc"),
+      tech: ["MCP", "Cursor IDE", "Pipedream", "AI"],
+      certificate: "https://drive.google.com/file/d/14G1P1fwgrxSaQFtgt7qB5KaLiwbjkul6/view?usp=sharing",
+    },
+    {
+      title: t("projects.ai.title"),
+      institution: "CCBP 4.0 Academy",
+      description: t("projects.ai.desc"),
+      tech: ["Make.com", "AI Agents", "MCP Servers", "APIs"],
+      certificate: "https://drive.google.com/file/d/1BaA2BOCUFI7xDoos6MW48gc7O1YGoMzz/view?usp=sharing",
+    },
+  ];
+
   return (
     <section id="projects" className="py-20 section-alt">
       <div className="container mx-auto px-4">
@@ -60,13 +57,13 @@ const ProjectsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-foreground text-center mb-2">Projects</h2>
+          <h2 className="text-3xl font-bold text-foreground text-center mb-2">{t("projects.title")}</h2>
           <div className="w-12 h-1 bg-primary rounded mx-auto mb-12" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {projects.map((project, i) => (
               <motion.div
-                key={project.title}
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -81,12 +78,12 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-5">
-                  {project.tech.map((t) => (
+                  {project.tech.map((tech) => (
                     <span
-                      key={t}
+                      key={tech}
                       className="px-3 py-1 text-xs font-medium rounded-full bg-accent text-accent-foreground"
                     >
-                      {t}
+                      {tech}
                     </span>
                   ))}
                 </div>
@@ -99,7 +96,7 @@ const ProjectsSection = () => {
                       className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                     >
                       <Github size={16} />
-                      GitHub
+                      {t("projects.github")}
                       <ExternalLink size={14} />
                     </a>
                   )}
@@ -111,7 +108,7 @@ const ProjectsSection = () => {
                       className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
                     >
                       <Award size={16} />
-                      Certificate
+                      {t("projects.certificate")}
                       <ExternalLink size={14} />
                     </a>
                   )}

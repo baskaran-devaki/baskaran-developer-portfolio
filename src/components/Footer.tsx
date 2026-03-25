@@ -1,9 +1,13 @@
+import { useLanguage } from "@/i18n/LanguageContext";
+
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="py-8 bg-card border-t border-border">
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Baskaran R. All rights reserved.
+          © {new Date().getFullYear()} Baskaran R. {t("footer.rights")}
         </p>
       </div>
     </footer>

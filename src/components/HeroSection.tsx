@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import baskaranImg from "@/assets/baskaran.jpg";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const socialLinks = [
   { icon: Linkedin, href: "https://linkedin.com/in/baskarandevaki", label: "LinkedIn" },
@@ -16,6 +17,8 @@ const socialLinks = [
 ];
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-background relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{
@@ -32,19 +35,18 @@ const HeroSection = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-sm font-medium tracking-widest uppercase text-primary mb-3">
-              Hello, I'm
+              {t("hero.greeting")}
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
               BASKARAN <span className="text-gradient">R</span>
             </h1>
             <h2 className="text-xl sm:text-2xl font-medium text-muted-foreground mb-4">
-              Aspiring Full Stack Developer
+              {t("hero.subtitle")}
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed mb-6">
-              Passionate about building scalable web applications with modern technologies. Turning ideas into elegant, functional digital experiences.
+              {t("hero.description")}
             </p>
 
-            {/* Social Icons */}
             <motion.div
               className="flex items-center justify-center md:justify-start gap-4"
               initial={{ opacity: 0, y: 20 }}
