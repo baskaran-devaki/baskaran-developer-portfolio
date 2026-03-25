@@ -1,19 +1,25 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Rocket, Award, ExternalLink } from "lucide-react";
+import { BookOpen, Code2, Sparkles, Award, ExternalLink } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 
 const timeline = [
   {
-    icon: GraduationCap,
-    title: "Full Stack Development at NxtWave",
-    description: "Currently learning full stack web development with industry-relevant curriculum covering frontend, backend, and database technologies.",
-    status: "In Progress",
+    icon: BookOpen,
+    title: "Started Learning Basics",
+    description: "Began the journey by learning the fundamentals of programming, understanding core concepts like variables, loops, and data structures.",
+    step: "Step 1",
   },
   {
-    icon: Rocket,
-    title: "Real-World Projects",
-    description: "Completed multiple hands-on projects including a Student Management System and BookMyShow Clone, applying learned skills to practical scenarios.",
-    status: "Completed",
+    icon: Code2,
+    title: "Built Real-World Projects",
+    description: "Applied web technologies to build hands-on projects including responsive websites, dynamic apps, and full-stack applications.",
+    step: "Step 2",
+  },
+  {
+    icon: Sparkles,
+    title: "Exploring Advanced Tools & AI",
+    description: "Currently diving into advanced development tools, AI-powered workflows, and modern frameworks to stay ahead in the tech landscape.",
+    step: "Step 3",
   },
 ];
 
@@ -89,8 +95,7 @@ const ExperienceSection = () => {
 
     const step = () => {
       if (!isPaused && el) {
-        scrollPos += 1.5;
-        // Reset when we've scrolled through the first set
+        scrollPos += 2;
         if (scrollPos >= el.scrollWidth / 2) {
           scrollPos = 0;
         }
@@ -103,7 +108,6 @@ const ExperienceSection = () => {
     return () => cancelAnimationFrame(animationId);
   }, [isPaused]);
 
-  // Duplicate cards for infinite loop
   const allCerts = [...certificates, ...certificates];
 
   return (
@@ -115,35 +119,42 @@ const ExperienceSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-foreground text-center mb-2">Learning Journey</h2>
+          <h2 className="text-3xl font-bold text-foreground text-center mb-2">My Learning Journey</h2>
           <div className="w-12 h-1 bg-primary rounded mx-auto mb-12" />
 
-          {/* Timeline */}
-          <div className="max-w-2xl mx-auto space-y-8 mb-16">
+          {/* Vertical Timeline */}
+          <div className="relative max-w-2xl mx-auto mb-16">
+            {/* Vertical line */}
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
+
             {timeline.map((item, i) => (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.15 }}
-                className="flex gap-5"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
+                className={`relative flex items-start gap-6 mb-12 last:mb-0 md:gap-0 ${
+                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
               >
-                <div className="flex flex-col items-center">
-                  <div className="p-3 rounded-full bg-accent text-accent-foreground">
-                    <item.icon size={20} />
+                {/* Icon circle */}
+                <div className="relative z-10 flex-shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2">
+                  <div className="p-3 rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <item.icon size={22} />
                   </div>
-                  {i < timeline.length - 1 && (
-                    <div className="w-px flex-1 bg-border mt-3" />
-                  )}
                 </div>
-                <div className="pb-8">
-                  <div className="flex items-center gap-3 mb-1">
-                    <h3 className="font-semibold text-foreground">{item.title}</h3>
-                    <span className="px-2.5 py-0.5 text-xs font-medium rounded-full bg-primary/10 text-primary">
-                      {item.status}
-                    </span>
-                  </div>
+
+                {/* Content card */}
+                <div
+                  className={`flex-1 rounded-xl border border-border bg-card p-5 card-elevated md:w-[calc(50%-2.5rem)] ${
+                    i % 2 === 0 ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
+                  }`}
+                >
+                  <span className="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full bg-primary/10 text-primary mb-2">
+                    {item.step}
+                  </span>
+                  <h3 className="font-semibold text-foreground text-lg mb-1">{item.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>
@@ -167,7 +178,7 @@ const ExperienceSection = () => {
             </p>
           </motion.div>
 
-          {/* Certificate Cards - Auto-scrolling infinite loop */}
+          {/* Certificate Cards - Auto-scrolling */}
           <div
             ref={scrollRef}
             onMouseEnter={() => setIsPaused(true)}
@@ -185,23 +196,18 @@ const ExperienceSection = () => {
                 rel="noopener noreferrer"
                 className="group snap-start shrink-0 w-[280px] rounded-xl border border-border bg-card p-5 flex flex-col justify-between min-h-[180px] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] hover:border-primary/40"
               >
-                {/* Top row: icon + date */}
                 <div className="flex items-start justify-between mb-4">
                   <div className="p-2 rounded-lg bg-primary/10 text-primary">
                     <Award size={18} />
                   </div>
                   <span className="text-xs text-muted-foreground">{cert.date}</span>
                 </div>
-
-                {/* Center: title + description */}
                 <div className="text-center flex-1 flex flex-col justify-center mb-4">
                   <h4 className="font-semibold text-foreground text-sm leading-snug mb-1.5">
                     {cert.title}
                   </h4>
                   <p className="text-xs text-muted-foreground">{cert.description}</p>
                 </div>
-
-                {/* Bottom row: tech + link icon */}
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-accent text-accent-foreground">
                     {cert.tech}
