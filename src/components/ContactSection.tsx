@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Github, Linkedin, Twitter, FileText, MessageCircle, Send, Loader2, CheckCircle } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Mail, Phone, Github, Linkedin, Twitter, FileText, MessageCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const contactLinks = [
@@ -14,36 +11,9 @@ const contactLinks = [
   { icon: FileText, label: "Resume", value: "View Resume", href: "https://drive.google.com/file/d/1iKA5V7u6-vKOWb9mBDqHv0Zd7718lKv-/view?usp=sharing" },
 ];
 
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeW6KK2b9RX0KWTaOhyAN1Lq8P7iit-HOt9oe4sgvX0BYjc6w/viewform";
+
 const ContactSection = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
-  const [errors, setErrors] = useState<Record<string, string>>({});
-
-  const validate = () => {
-    const e: Record<string, string> = {};
-    if (!form.name.trim()) e.name = "Name is required";
-    if (!form.email.trim()) e.email = "Email is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Invalid email";
-    if (!form.message.trim()) e.message = "Message is required";
-    setErrors(e);
-    return Object.keys(e).length === 0;
-  };
-
-  const sendMessage = () => {
-    if (!validate()) return;
-    setStatus("loading");
-    const text = `New Portfolio Message:\n\nName: ${form.name}\nEmail: ${form.email}\nMessage: ${form.message}`;
-    const url = `https://wa.me/918778243596?text=${encodeURIComponent(text)}`;
-    setTimeout(() => {
-      setStatus("success");
-      window.open(url, "_blank");
-      setTimeout(() => {
-        setForm({ name: "", email: "", message: "" });
-        setStatus("idle");
-      }, 3000);
-    }, 800);
-  };
-
   return (
     <>
       <section id="contact" className="py-20 section-alt">
@@ -61,75 +31,27 @@ const ContactSection = () => {
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-              {/* Modern Contact Form */}
+              {/* Google Form CTA */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="bg-card rounded-2xl p-6 sm:p-8 shadow-lg border border-border"
+                className="bg-card rounded-2xl p-8 sm:p-10 shadow-lg border border-border flex flex-col items-center justify-center text-center"
               >
-                <h3 className="text-lg font-semibold text-foreground mb-6 flex items-center gap-2">
-                  <Send size={20} className="text-primary" />
-                  Send a Message
-                </h3>
-                <div className="space-y-5">
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-1.5 block">Name</label>
-                    <Input
-                      placeholder="Your full name"
-                      value={form.name}
-                      onChange={(e) => { setForm({ ...form, name: e.target.value }); setErrors({ ...errors, name: "" }); }}
-                      className={`rounded-lg ${errors.name ? "border-destructive" : ""}`}
-                    />
-                    {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
-                    <Input
-                      type="email"
-                      placeholder="you@example.com"
-                      value={form.email}
-                      onChange={(e) => { setForm({ ...form, email: e.target.value }); setErrors({ ...errors, email: "" }); }}
-                      className={`rounded-lg ${errors.email ? "border-destructive" : ""}`}
-                    />
-                    {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
-                  </div>
-                  <div>
-                    <label className="text-sm font-medium text-foreground mb-1.5 block">Message</label>
-                    <Textarea
-                      placeholder="Write your message here..."
-                      rows={4}
-                      value={form.message}
-                      onChange={(e) => { setForm({ ...form, message: e.target.value }); setErrors({ ...errors, message: "" }); }}
-                      className={`rounded-lg ${errors.message ? "border-destructive" : ""}`}
-                    />
-                    {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
-                  </div>
-
-                  {status === "success" && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="flex items-center gap-2 text-sm text-primary font-medium"
-                    >
-                      <CheckCircle size={16} /> Message sent successfully!
-                    </motion.div>
-                  )}
-
-                  <Button
-                    onClick={sendMessage}
-                    disabled={status !== "idle"}
-                    className="w-full gap-2 rounded-lg h-11 text-base"
-                  >
-                    {status === "loading" ? <Loader2 size={18} className="animate-spin" /> : <Send size={18} />}
-                    Send Message
-                  </Button>
-
-                  <p className="text-xs text-muted-foreground text-center pt-1">
-                    I will respond to your message as soon as possible.
-                  </p>
+                <div className="mx-auto mb-5 inline-flex p-4 rounded-xl bg-primary/10 text-primary">
+                  <Mail size={32} />
                 </div>
+                <h3 className="text-xl font-semibold text-foreground mb-3">Get in touch with me</h3>
+                <p className="text-muted-foreground mb-6 max-w-sm">
+                  Have a question, idea, or opportunity? Fill out my contact form and I'll get back to you as soon as possible.
+                </p>
+                <Button asChild size="lg" className="gap-2 rounded-lg">
+                  <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink size={18} />
+                    Open Contact Form
+                  </a>
+                </Button>
               </motion.div>
 
               {/* Contact Links */}
