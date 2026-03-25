@@ -1,49 +1,29 @@
 import { motion } from "framer-motion";
 import { Brain, Zap, BookOpen, Rocket } from "lucide-react";
-
-const cards = [
-  {
-    icon: Brain,
-    title: "Strong Problem-Solving Skills",
-    description: "I approach challenges methodically, breaking complex problems into manageable solutions with clean, efficient code.",
-  },
-  {
-    icon: Zap,
-    title: "Quick Adaptability",
-    description: "I rapidly learn and adopt new technologies, frameworks, and tools to stay current in the fast-paced tech industry.",
-  },
-  {
-    icon: BookOpen,
-    title: "Passion for Continuous Learning",
-    description: "I'm committed to lifelong learning, constantly exploring new concepts and improving my skills through courses and projects.",
-  },
-  {
-    icon: Rocket,
-    title: "Real-World Project Builder",
-    description: "I don't just learn theory — I build practical, functional applications that solve real problems and deliver value.",
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const WhyHireMeSection = () => {
+  const { t } = useLanguage();
+
+  const cards = [
+    { icon: Brain, title: t("whyhire.card1.title"), description: t("whyhire.card1.desc") },
+    { icon: Zap, title: t("whyhire.card2.title"), description: t("whyhire.card2.desc") },
+    { icon: BookOpen, title: t("whyhire.card3.title"), description: t("whyhire.card3.desc") },
+    { icon: Rocket, title: t("whyhire.card4.title"), description: t("whyhire.card4.desc") },
+  ];
+
   return (
     <section id="why-hire-me" className="py-20 section-alt">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-3xl font-bold text-foreground text-center mb-2">Why Hire Me</h2>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <h2 className="text-3xl font-bold text-foreground text-center mb-2">{t("whyhire.title")}</h2>
           <div className="w-12 h-1 bg-primary rounded mx-auto mb-4" />
-          <p className="text-muted-foreground text-center max-w-lg mx-auto mb-12">
-            Here's what sets me apart and makes me a great addition to your team.
-          </p>
+          <p className="text-muted-foreground text-center max-w-lg mx-auto mb-12">{t("whyhire.subtitle")}</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {cards.map((card, i) => (
               <motion.div
-                key={card.title}
+                key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

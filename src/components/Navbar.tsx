@@ -1,17 +1,26 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
+import { languageNames, Language } from "@/i18n/translations";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.skills"), href: "#skills" },
+    { label: t("nav.projects"), href: "#projects" },
+    { label: t("nav.experience"), href: "#experience" },
+    { label: t("nav.contact"), href: "#contact" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-md border-b border-border">
@@ -29,14 +38,56 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+
+          {/* Language Selector */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors cursor-pointer">
+                <Globe size={16} />
+                {languageNames[language]}
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {(Object.keys(languageNames) as Language[]).map((lang) => (
+                <DropdownMenuItem
+                  key={lang}
+                  onClick={() => setLanguage(lang)}
+                  className={language === lang ? "bg-accent font-semibold" : ""}
+                >
+                  {languageNames[lang]}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          {/* Mobile Language Selector */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="text-foreground p-1" aria-label="Change language">
+                <Globe size={20} />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {(Object.keys(languageNames) as Language[]).map((lang) => (
+                <DropdownMenuItem
+                  key={lang}
+                  onClick={() => setLanguage(lang)}
+                  className={language === lang ? "bg-accent font-semibold" : ""}
+                >
+                  {languageNames[lang]}
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-foreground"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
       <AnimatePresence>
         {open && (

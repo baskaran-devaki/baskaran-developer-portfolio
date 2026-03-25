@@ -1,45 +1,48 @@
 import { motion } from "framer-motion";
-
-const skillCategories = [
-  {
-    title: "Frontend",
-    skills: [
-      { name: "HTML", level: 90 },
-      { name: "CSS", level: 85 },
-      { name: "JavaScript", level: 80 },
-      { name: "React", level: 75 },
-    ],
-  },
-  {
-    title: "Backend",
-    skills: [
-      { name: "Node.js", level: 70 },
-      { name: "Python", level: 75 },
-    ],
-  },
-  {
-    title: "Database",
-    skills: [
-      { name: "MySQL", level: 70 },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "Git", level: 80 },
-      { name: "GitHub", level: 85 },
-      { name: "VS Code", level: 90 },
-    ],
-  },
-  {
-    title: "Currently Learning",
-    skills: [
-      { name: "Generative AI", level: 30 },
-    ],
-  },
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
+
+  const skillCategories = [
+    {
+      title: t("skills.frontend"),
+      skills: [
+        { name: "HTML", level: 90 },
+        { name: "CSS", level: 85 },
+        { name: "JavaScript", level: 80 },
+        { name: "React", level: 75 },
+      ],
+    },
+    {
+      title: t("skills.backend"),
+      skills: [
+        { name: "Node.js", level: 70 },
+        { name: "Python", level: 75 },
+      ],
+    },
+    {
+      title: t("skills.database"),
+      skills: [
+        { name: "MySQL", level: 70 },
+      ],
+    },
+    {
+      title: t("skills.tools"),
+      skills: [
+        { name: "Git", level: 80 },
+        { name: "GitHub", level: 85 },
+        { name: "VS Code", level: 90 },
+      ],
+    },
+    {
+      title: t("skills.learning"),
+      skills: [
+        { name: "Generative AI", level: 30 },
+      ],
+    },
+  ];
+
   return (
     <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -49,7 +52,7 @@ const SkillsSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl font-bold text-foreground text-center mb-2">Skills</h2>
+          <h2 className="text-3xl font-bold text-foreground text-center mb-2">{t("skills.title")}</h2>
           <div className="w-12 h-1 bg-primary rounded mx-auto mb-12" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
