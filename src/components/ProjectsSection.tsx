@@ -7,18 +7,6 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: t("projects.sms.title"),
-      description: t("projects.sms.desc"),
-      tech: ["React", "Node.js", "MySQL", "CSS"],
-      github: "https://github.com/baskaran-devaki",
-    },
-    {
-      title: t("projects.bms.title"),
-      description: t("projects.bms.desc"),
-      tech: ["HTML", "CSS", "JavaScript", "React"],
-      github: "https://github.com/baskaran-devaki",
-    },
-    {
       title: t("projects.data.title"),
       institution: "CCBP 4.0 Academy",
       description: t("projects.data.desc"),
@@ -88,18 +76,6 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  {"github" in project && project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                    >
-                      <Github size={16} />
-                      {t("projects.github")}
-                      <ExternalLink size={14} />
-                    </a>
-                  )}
                   {"certificate" in project && project.certificate && (
                     <a
                       href={project.certificate}
