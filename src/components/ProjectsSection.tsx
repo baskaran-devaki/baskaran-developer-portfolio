@@ -76,18 +76,6 @@ const ProjectsSection = () => {
                   ))}
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  {"github" in project && project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                    >
-                      <Github size={16} />
-                      {t("projects.github")}
-                      <ExternalLink size={14} />
-                    </a>
-                  )}
                   {"certificate" in project && project.certificate && (
                     <a
                       href={project.certificate}
