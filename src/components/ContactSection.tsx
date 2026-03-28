@@ -14,7 +14,7 @@ const ContactSection = () => {
     { icon: Github, label: "GitHub", value: "baskaran-devaki", href: "https://github.com/baskaran-devaki" },
     { icon: Linkedin, label: "LinkedIn", value: "baskarandevaki", href: "https://linkedin.com/in/baskarandevaki" },
     { icon: Twitter, label: "Twitter", value: "baskarandevaki", href: "https://twitter.com/baskarandevaki" },
-    { icon: FileText, label: t("contact.resume"), value: t("contact.viewResume"), { icon: FileText, label: t("contact.resume"), value: t("contact.viewResume"), href: "https://docs.google.com/document/d/17vK41bWUpR5E9f1btC8qYHPYUTgcbCHu/edit?usp=sharing&ouid=110155258988125851637&rtpof=true&sd=true" }, },
+    { icon: FileText, label: t("contact.resume"), value: t("contact.viewResume"), href: "https://docs.google.com/document/d/17vK41bWUpR5E9f1btC8qYHPYUTgcbCHu/edit?usp=sharing&ouid=110155258988125851637&rtpof=true&sd=true" },
   ];
 
   return (
