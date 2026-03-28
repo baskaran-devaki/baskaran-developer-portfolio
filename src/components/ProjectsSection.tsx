@@ -7,18 +7,6 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: t("projects.sms.title"),
-      description: t("projects.sms.desc"),
-      tech: ["React", "Node.js", "MySQL", "CSS"],
-      github: "https://github.com/baskaran-devaki",
-    },
-    {
-      title: t("projects.bms.title"),
-      description: t("projects.bms.desc"),
-      tech: ["HTML", "CSS", "JavaScript", "React"],
-      github: "https://github.com/baskaran-devaki",
-    },
-    {
       title: t("projects.data.title"),
       institution: "CCBP 4.0 Academy",
       description: t("projects.data.desc"),
