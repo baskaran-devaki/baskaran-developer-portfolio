@@ -13,17 +13,21 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 section-alt">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 section-gradient-1 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: "radial-gradient(hsl(190 80% 50%) 1px, transparent 1px)",
+        backgroundSize: "40px 40px",
+      }} />
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold text-foreground text-center mb-2">{t("about.title")}</h2>
-          <div className="w-12 h-1 bg-primary rounded mx-auto mb-8" />
-          <p className="text-muted-foreground max-w-2xl mx-auto text-center mb-12 leading-relaxed">
+          <h2 className="text-3xl font-bold text-white text-center mb-2">{t("about.title")}</h2>
+          <div className="w-16 h-1 rounded-full mx-auto mb-8 bg-gradient-to-r from-[hsl(190,80%,50%)] to-[hsl(270,60%,55%)]" />
+          <p className="text-[hsl(220,15%,60%)] max-w-2xl mx-auto text-center mb-12 leading-relaxed">
             {t("about.description")}
           </p>
 
@@ -35,12 +39,12 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex items-start gap-4 p-5 rounded-xl bg-card card-elevated"
+                className="flex items-start gap-4 p-5 rounded-2xl glass-card"
               >
-                <div className="p-2.5 rounded-lg bg-accent text-accent-foreground flex-shrink-0">
+                <div className="p-2.5 rounded-xl bg-[hsl(190,80%,50%,0.15)] text-[hsl(190,80%,60%)] flex-shrink-0">
                   <item.icon size={20} />
                 </div>
-                <p className="text-sm text-foreground leading-relaxed">{item.text}</p>
+                <p className="text-sm text-[hsl(220,15%,75%)] leading-relaxed">{item.text}</p>
               </motion.div>
             ))}
           </div>
