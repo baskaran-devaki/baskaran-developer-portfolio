@@ -247,9 +247,9 @@ export const translations: Record<Language, Record<string, string>> = {
 
     "contact.title": "संपर्क करें",
     "contact.subtitle": "मैं अवसरों और सहयोग के लिए खुला हूं!",
-    "contact.cta.title": "मुझसे संपर्क करें",
-    "contact.cta.desc": "कोई सवाल, विचार या अवसर? मेरा संपर्क फॉर्म भरें।",
-    "contact.cta.button": "संपर्क फॉर्म खोलें",
+    "contact.cta.title": "अपनी प्रतिक्रिया साझा करें",
+    "contact.cta.desc": "मुझे आपके विचार, सुझाव या प्रतिक्रिया सुनना अच्छा लगेगा!",
+    "contact.cta.button": "प्रतिक्रिया फॉर्म खोलें",
     "contact.email": "ईमेल",
     "contact.mobile": "मोबाइल",
     "contact.resume": "रिज्यूमे",
