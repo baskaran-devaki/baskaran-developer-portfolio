@@ -1,13 +1,7 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Twitter, Mail } from "lucide-react";
 import baskaranImg from "@/assets/baskaran.jpg";
-import heroBg1 from "@/assets/hero-bg-1.jpg";
-import heroBg2 from "@/assets/hero-bg-2.jpg";
-import heroBg3 from "@/assets/hero-bg-3.jpg";
 import { useLanguage } from "@/i18n/LanguageContext";
-
-const heroImages = [heroBg1, heroBg2, heroBg3];
 
 const socialLinks = [
   { icon: Linkedin, href: "https://linkedin.com/in/baskarandevaki", label: "LinkedIn" },
@@ -24,96 +18,40 @@ const socialLinks = [
 
 const HeroSection = () => {
   const { t } = useLanguage();
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      {/* Slideshow Background */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentImage}
-          className="absolute inset-0 z-0"
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1.05 }}
-          exit={{ opacity: 0 }}
-          transition={{ opacity: { duration: 1.5 }, scale: { duration: 8, ease: "linear" } }}
-        >
-          <img
-            src={heroImages[currentImage]}
-            alt=""
-            className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
-          />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[hsl(222,30%,6%,0.75)] via-[hsl(222,30%,6%,0.85)] to-[hsl(222,30%,6%,0.95)]" />
-
-      {/* Decorative particles */}
-      <div className="absolute inset-0 z-[2] opacity-30" style={{
-        backgroundImage: "radial-gradient(hsl(190 80% 50%) 1px, transparent 1px)",
-        backgroundSize: "48px 48px",
+    <section className="min-h-screen flex items-center justify-center pt-16 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: "radial-gradient(hsl(215 80% 48%) 1px, transparent 1px)",
+        backgroundSize: "32px 32px",
       }} />
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-20">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
           <motion.div
             className="flex-1 text-center md:text-left"
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.6 }}
           >
-            <motion.p
-              className="text-sm font-medium tracking-[0.2em] uppercase mb-4"
-              style={{ color: "hsl(190 80% 60%)" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <p className="text-sm font-medium tracking-widest uppercase text-primary mb-3">
               {t("hero.greeting")}
-            </motion.p>
-            <motion.h1
-              className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-            >
-              <span className="text-white">BASKARAN </span>
-              <span className="text-gradient-glow">R</span>
-            </motion.h1>
-            <motion.h2
-              className="text-xl sm:text-2xl font-medium mb-5"
-              style={{ color: "hsl(220 20% 75%)" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
+            </p>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4">
+              BASKARAN <span className="text-gradient">R</span>
+            </h1>
+            <h2 className="text-xl sm:text-2xl font-medium text-muted-foreground mb-4">
               {t("hero.subtitle")}
-            </motion.h2>
-            <motion.p
-              className="max-w-lg mx-auto md:mx-0 leading-relaxed mb-8"
-              style={{ color: "hsl(220 15% 60%)" }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-            >
+            </h2>
+            <p className="text-muted-foreground max-w-lg mx-auto md:mx-0 leading-relaxed mb-6">
               {t("hero.description")}
-            </motion.p>
+            </p>
 
             <motion.div
               className="flex items-center justify-center md:justify-start gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
             >
               {socialLinks.map((item) => (
                 <a
@@ -122,7 +60,7 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
-                  className="p-3 rounded-full border border-[hsl(190,80%,50%,0.3)] text-[hsl(190,80%,60%)] hover:bg-[hsl(190,80%,50%,0.15)] hover:border-[hsl(190,80%,50%,0.6)] hover:text-white hover:shadow-[0_0_20px_hsl(190,80%,50%,0.3)] transition-all duration-300 hover:scale-110"
+                  className="p-3 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-md hover:shadow-lg hover:scale-110 transform duration-200"
                 >
                   <item.icon size={20} />
                 </a>
@@ -132,19 +70,16 @@ const HeroSection = () => {
 
           <motion.div
             className="flex-shrink-0"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="relative">
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-[hsl(190,80%,50%,0.4)] via-[hsl(220,80%,55%,0.4)] to-[hsl(270,60%,55%,0.4)] blur-xl animate-pulse-glow" />
-              <div className="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-2 border-[hsl(190,80%,50%,0.5)]">
-                <img
-                  src={baskaranImg}
-                  alt="Baskaran R"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
+            <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-accent ring-4 ring-primary/10">
+              <img
+                src={baskaranImg}
+                alt="Baskaran R"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
           </motion.div>
         </div>
@@ -154,7 +89,7 @@ const HeroSection = () => {
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
         >
-          <ArrowDown size={20} className="text-[hsl(190,80%,60%)]" />
+          <ArrowDown size={20} className="text-muted-foreground" />
         </motion.div>
       </div>
     </section>

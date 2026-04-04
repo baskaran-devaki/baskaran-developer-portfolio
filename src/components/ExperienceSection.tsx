@@ -45,15 +45,14 @@ const ExperienceSection = () => {
   const allCerts = [...certificates, ...certificates];
 
   return (
-    <section id="experience" className="py-20 section-gradient-4 relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[hsl(190,80%,50%,0.03)] blur-3xl" />
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="experience" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <h2 className="text-3xl font-bold text-white text-center mb-2">{t("experience.title")}</h2>
-          <div className="w-16 h-1 rounded-full mx-auto mb-12 bg-gradient-to-r from-[hsl(190,80%,50%)] to-[hsl(270,60%,55%)]" />
+          <h2 className="text-3xl font-bold text-foreground text-center mb-2">{t("experience.title")}</h2>
+          <div className="w-12 h-1 bg-primary rounded mx-auto mb-12" />
 
           <div className="relative max-w-2xl mx-auto mb-16">
-            <div className="absolute left-6 top-0 bottom-0 w-px md:left-1/2 md:-translate-x-px" style={{ background: "linear-gradient(180deg, hsl(190 80% 50% / 0.3), hsl(270 60% 55% / 0.3))" }} />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-border md:left-1/2 md:-translate-x-px" />
             {timeline.map((item, i) => (
               <motion.div
                 key={i}
@@ -64,14 +63,14 @@ const ExperienceSection = () => {
                 className={`relative flex items-start gap-6 mb-12 last:mb-0 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
               >
                 <div className="relative z-10 flex-shrink-0 md:absolute md:left-1/2 md:-translate-x-1/2">
-                  <div className="p-3 rounded-full shadow-lg" style={{ background: "linear-gradient(135deg, hsl(190 80% 50%), hsl(220 80% 55%))" }}>
-                    <item.icon size={22} className="text-white" />
+                  <div className="p-3 rounded-full bg-primary text-primary-foreground shadow-lg">
+                    <item.icon size={22} />
                   </div>
                 </div>
-                <div className={`flex-1 rounded-2xl p-5 glass-card md:w-[calc(50%-2.5rem)] ${i % 2 === 0 ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"}`}>
-                  <span className="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full bg-[hsl(190,80%,50%,0.15)] text-[hsl(190,80%,60%)] mb-2">{item.step}</span>
-                  <h3 className="font-semibold text-white text-lg mb-1">{item.title}</h3>
-                  <p className="text-sm text-[hsl(220,15%,60%)] leading-relaxed">{item.description}</p>
+                <div className={`flex-1 rounded-xl border border-border bg-card p-5 card-elevated md:w-[calc(50%-2.5rem)] ${i % 2 === 0 ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"}`}>
+                  <span className="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full bg-primary/10 text-primary mb-2">{item.step}</span>
+                  <h3 className="font-semibold text-foreground text-lg mb-1">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -79,10 +78,10 @@ const ExperienceSection = () => {
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <Award size={24} className="text-[hsl(190,80%,60%)]" />
-              <h3 className="text-2xl font-bold text-white">{t("experience.achievements")}</h3>
+              <Award size={24} className="text-primary" />
+              <h3 className="text-2xl font-bold text-foreground">{t("experience.achievements")}</h3>
             </div>
-            <p className="text-[hsl(220,15%,55%)] text-sm">{t("experience.achievements.desc")}</p>
+            <p className="text-muted-foreground text-sm">{t("experience.achievements.desc")}</p>
           </motion.div>
 
           <div
@@ -95,18 +94,18 @@ const ExperienceSection = () => {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             {allCerts.map((cert, i) => (
-              <a key={`${cert.title}-${i}`} href={cert.link} target="_blank" rel="noopener noreferrer" className="group snap-start shrink-0 w-[280px] rounded-2xl p-5 flex flex-col justify-between min-h-[180px] cursor-pointer glass-card">
+              <a key={`${cert.title}-${i}`} href={cert.link} target="_blank" rel="noopener noreferrer" className="group snap-start shrink-0 w-[280px] rounded-xl border border-border bg-card p-5 flex flex-col justify-between min-h-[180px] cursor-pointer transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] hover:border-primary/40">
                 <div className="flex items-start justify-between mb-4">
-                  <div className="p-2 rounded-xl bg-[hsl(190,80%,50%,0.15)] text-[hsl(190,80%,60%)]"><Award size={18} /></div>
-                  <span className="text-xs text-[hsl(220,15%,50%)]">{cert.date}</span>
+                  <div className="p-2 rounded-lg bg-primary/10 text-primary"><Award size={18} /></div>
+                  <span className="text-xs text-muted-foreground">{cert.date}</span>
                 </div>
                 <div className="text-center flex-1 flex flex-col justify-center mb-4">
-                  <h4 className="font-semibold text-white text-sm leading-snug mb-1.5">{cert.title}</h4>
-                  <p className="text-xs text-[hsl(220,15%,55%)]">{cert.description}</p>
+                  <h4 className="font-semibold text-foreground text-sm leading-snug mb-1.5">{cert.title}</h4>
+                  <p className="text-xs text-muted-foreground">{cert.description}</p>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-[hsl(190,80%,50%,0.1)] text-[hsl(190,80%,60%)] border border-[hsl(190,80%,50%,0.2)]">{cert.tech}</span>
-                  <ExternalLink size={14} className="text-[hsl(220,15%,45%)] opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-accent text-accent-foreground">{cert.tech}</span>
+                  <ExternalLink size={14} className="text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </a>
             ))}

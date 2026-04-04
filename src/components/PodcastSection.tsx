@@ -39,17 +39,16 @@ const PodcastSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="podcasts" className="py-20 section-gradient-2 overflow-hidden relative">
-      <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-[hsl(215,80%,50%,0.03)] blur-3xl" />
-      <div className="container mx-auto px-4 mb-12 relative z-10">
+    <section id="podcasts" className="py-20 section-alt overflow-hidden">
+      <div className="container mx-auto px-4 mb-12">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center">
           <div className="flex items-center justify-center gap-3 mb-2">
-            <Mic className="text-[hsl(190,80%,60%)]" size={28} />
-            <h2 className="text-3xl font-bold text-white">{t("podcast.title")}</h2>
+            <Mic className="text-primary" size={28} />
+            <h2 className="text-3xl font-bold text-foreground">{t("podcast.title")}</h2>
           </div>
-          <p className="text-[hsl(220,15%,55%)] text-sm mb-3">{t("podcast.subtitle")}</p>
-          <div className="w-16 h-1 rounded-full mx-auto mb-4 bg-gradient-to-r from-[hsl(190,80%,50%)] to-[hsl(270,60%,55%)]" />
-          <Badge className="bg-[hsl(190,80%,50%,0.12)] text-[hsl(190,80%,60%)] border-[hsl(190,80%,50%,0.25)] hover:bg-[hsl(190,80%,50%,0.2)] text-sm px-4 py-1">
+          <p className="text-muted-foreground text-sm mb-3">{t("podcast.subtitle")}</p>
+          <div className="w-12 h-1 bg-primary rounded mx-auto mb-4" />
+          <Badge className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 text-sm px-4 py-1">
             {t("podcast.badge")} · {podcasts.length}+ Certificates
           </Badge>
         </motion.div>
@@ -59,22 +58,22 @@ const PodcastSection = () => {
         <div className="flex animate-scroll group-hover:[animation-play-state:paused] w-max">
           {allCards.map((podcast, index) => (
             <a key={`${podcast.title}-${index}`} href={podcast.link} target="_blank" rel="noopener noreferrer" className="flex-shrink-0 w-[320px] mx-3 group/card">
-              <div className="h-full rounded-2xl p-5 glass-card">
+              <div className="h-full rounded-xl border border-border bg-card p-5 card-elevated transition-transform duration-300 group-hover/card:scale-[1.03] group-hover/card:border-primary/40">
                 <div className="flex items-start justify-between mb-3">
-                  <div className="p-2 rounded-xl bg-[hsl(190,80%,50%,0.12)]"><Mic size={18} className="text-[hsl(190,80%,60%)]" /></div>
-                  <ExternalLink size={14} className="text-[hsl(220,15%,45%)] group-hover/card:text-[hsl(190,80%,60%)] transition-colors mt-1" />
+                  <div className="p-2 rounded-lg bg-primary/10"><Mic size={18} className="text-primary" /></div>
+                  <ExternalLink size={14} className="text-muted-foreground group-hover/card:text-primary transition-colors mt-1" />
                 </div>
-                <h3 className="font-semibold text-white text-sm leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">{podcast.title}</h3>
-                <div className="flex flex-col gap-1 mb-3 text-xs text-[hsl(220,15%,50%)]">
+                <h3 className="font-semibold text-foreground text-sm leading-tight mb-2 line-clamp-2 min-h-[2.5rem]">{podcast.title}</h3>
+                <div className="flex flex-col gap-1 mb-3 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1.5"><Calendar size={12} />{podcast.date}</span>
                   <span className="flex items-center gap-1.5"><User size={12} />{podcast.speaker}</span>
                 </div>
-                <p className="text-xs text-[hsl(220,15%,50%)] leading-relaxed mb-3 line-clamp-2">{podcast.description}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-2">{podcast.description}</p>
                 <div className="space-y-1.5">
                   {podcast.insights.map((insight) => (
                     <div key={insight} className="flex items-center gap-2 text-xs">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[hsl(190,80%,50%)] flex-shrink-0" />
-                      <span className="text-[hsl(220,15%,65%)]">{insight}</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      <span className="text-foreground/80">{insight}</span>
                     </div>
                   ))}
                 </div>
@@ -82,8 +81,8 @@ const PodcastSection = () => {
             </a>
           ))}
         </div>
-        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[hsl(225,25%,10%)] to-transparent pointer-events-none z-10" />
-        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[hsl(225,25%,10%)] to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
       </div>
     </section>
   );
