@@ -167,9 +167,9 @@ export const translations: Record<Language, Record<string, string>> = {
 
     "contact.title": "தொடர்பு கொள்ளுங்கள்",
     "contact.subtitle": "வாய்ப்புகள் மற்றும் ஒத்துழைப்புகளுக்கு தயாராக இருக்கிறேன்!",
-    "contact.cta.title": "என்னுடன் தொடர்பு கொள்ளுங்கள்",
-    "contact.cta.desc": "கேள்வி, யோசனை அல்லது வாய்ப்பு? எனது தொடர்பு படிவத்தை நிரப்பவும்.",
-    "contact.cta.button": "தொடர்பு படிவம் திறக்கவும்",
+    "contact.cta.title": "உங்கள் கருத்தைப் பகிரவும்",
+    "contact.cta.desc": "உங்கள் எண்ணங்கள், ஆலோசனைகள் அல்லது கருத்துக்களை கேட்க விரும்புகிறேன்!",
+    "contact.cta.button": "கருத்து படிவம் திறக்கவும்",
     "contact.email": "மின்னஞ்சல்",
     "contact.mobile": "கைபேசி",
     "contact.resume": "சுயவிவரம்",
