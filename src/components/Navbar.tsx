@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { languageNames, Language } from "@/i18n/translations";
@@ -14,6 +15,7 @@ import {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { theme, setTheme } = useTheme();
 
   const navLinks = [
     { label: t("nav.about"), href: "#about" },
@@ -71,6 +73,15 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-1.5 rounded-md text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </div>
         <div className="flex items-center gap-2 md:hidden">
           {/* Mobile Language Selector */}
@@ -92,6 +103,14 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="text-foreground p-1"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button
             onClick={() => setOpen(!open)}
             className="text-foreground"
