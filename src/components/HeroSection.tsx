@@ -21,8 +21,8 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "radial-gradient(hsl(215 80% 48%) 1px, transparent 1px)",
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
+        backgroundImage: "radial-gradient(hsl(var(--primary)) 1px, transparent 1px)",
         backgroundSize: "32px 32px",
       }} />
 
@@ -60,7 +60,7 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
-                  className="p-3 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-md hover:shadow-lg hover:scale-110 transform duration-200"
+                  className="p-3 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-md hover:shadow-lg hover:scale-110 transform duration-200 neon-glow"
                 >
                   <item.icon size={20} />
                 </a>
@@ -74,7 +74,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-accent ring-4 ring-primary/10">
+            <div className="w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-accent ring-4 ring-primary/10 neon-border">
               <img
                 src={baskaranImg}
                 alt="Baskaran R"

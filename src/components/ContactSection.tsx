@@ -27,11 +27,11 @@ const ContactSection = () => {
             <p className="text-muted-foreground text-center max-w-md mx-auto mb-12">{t("contact.subtitle")}</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-card rounded-2xl p-8 sm:p-10 shadow-lg border border-border flex flex-col items-center justify-center text-center">
+              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-card rounded-2xl p-8 sm:p-10 shadow-lg border border-border flex flex-col items-center justify-center text-center neon-border">
                 <div className="mx-auto mb-5 inline-flex p-4 rounded-xl bg-primary/10 text-primary"><Mail size={32} /></div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{t("contact.cta.title")}</h3>
                 <p className="text-muted-foreground mb-6 max-w-sm">{t("contact.cta.desc")}</p>
-                <Button asChild size="lg" className="gap-2 rounded-lg">
+                <Button asChild size="lg" className="gap-2 rounded-lg neon-btn">
                   <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
                     <ExternalLink size={18} />
                     {t("contact.cta.button")}
@@ -41,7 +41,7 @@ const ContactSection = () => {
 
               <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="grid grid-cols-1 sm:grid-cols-2 gap-4 content-start">
                 {contactLinks.map((item, i) => (
-                  <motion.a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="flex items-center gap-4 p-4 rounded-xl bg-card shadow-md border border-border group">
+                  <motion.a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="flex items-center gap-4 p-4 rounded-xl bg-card shadow-md border border-border group neon-border">
                     <div className="p-2.5 rounded-lg bg-accent text-accent-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-colors"><item.icon size={18} /></div>
                     <div className="min-w-0">
                       <p className="text-xs text-muted-foreground uppercase tracking-wider">{item.label}</p>
