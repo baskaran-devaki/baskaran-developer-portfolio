@@ -86,9 +86,9 @@ export const translations: Record<Language, Record<string, string>> = {
     // Contact
     "contact.title": "Get In Touch",
     "contact.subtitle": "I'm open to opportunities and collaborations. Feel free to reach out!",
-    "contact.cta.title": "Get in touch with me",
-    "contact.cta.desc": "Have a question, idea, or opportunity? Fill out my contact form and I'll get back to you as soon as possible.",
-    "contact.cta.button": "Open Contact Form",
+    "contact.cta.title": "Share Your Feedback",
+    "contact.cta.desc": "I'd love to hear your thoughts, suggestions, or feedback!",
+    "contact.cta.button": "Open Feedback Form",
     "contact.email": "Email",
     "contact.mobile": "Mobile",
     "contact.resume": "Resume",
