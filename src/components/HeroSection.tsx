@@ -60,7 +60,7 @@ const HeroSection = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={item.label}
-                  className="p-3 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-md hover:shadow-lg hover:scale-110 transform duration-200"
+                  className="p-3 rounded-full bg-accent text-accent-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-md hover:shadow-lg hover:scale-110 transform duration-200 neon-glow"
                 >
                   <item.icon size={20} />
                 </a>
