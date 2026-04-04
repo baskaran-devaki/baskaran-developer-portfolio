@@ -103,6 +103,14 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          {/* Mobile Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="text-foreground p-1"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
           <button
             onClick={() => setOpen(!open)}
             className="text-foreground"
