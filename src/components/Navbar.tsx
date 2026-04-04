@@ -3,6 +3,7 @@ import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { languageNames, Language } from "@/i18n/translations";
+import baskaranImg from "@/assets/baskaran.jpg";
 import {
   DropdownMenu,
   DropdownMenuContent,
