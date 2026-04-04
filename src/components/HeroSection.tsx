@@ -21,8 +21,8 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center pt-16 bg-background relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "radial-gradient(hsl(215 80% 48%) 1px, transparent 1px)",
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
+        backgroundImage: "radial-gradient(hsl(var(--primary)) 1px, transparent 1px)",
         backgroundSize: "32px 32px",
       }} />
 
