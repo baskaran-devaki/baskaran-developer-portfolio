@@ -27,7 +27,7 @@ const ContactSection = () => {
             <p className="text-muted-foreground text-center max-w-md mx-auto mb-12">{t("contact.subtitle")}</p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
-              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-card rounded-2xl p-8 sm:p-10 shadow-lg border border-border flex flex-col items-center justify-center text-center">
+              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-card rounded-2xl p-8 sm:p-10 shadow-lg border border-border flex flex-col items-center justify-center text-center neon-border">
                 <div className="mx-auto mb-5 inline-flex p-4 rounded-xl bg-primary/10 text-primary"><Mail size={32} /></div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{t("contact.cta.title")}</h3>
                 <p className="text-muted-foreground mb-6 max-w-sm">{t("contact.cta.desc")}</p>
