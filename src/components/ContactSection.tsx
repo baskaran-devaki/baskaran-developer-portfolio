@@ -31,7 +31,7 @@ const ContactSection = () => {
                 <div className="mx-auto mb-5 inline-flex p-4 rounded-xl bg-primary/10 text-primary"><Mail size={32} /></div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">{t("contact.cta.title")}</h3>
                 <p className="text-muted-foreground mb-6 max-w-sm">{t("contact.cta.desc")}</p>
-                <Button asChild size="lg" className="gap-2 rounded-lg">
+                <Button asChild size="lg" className="gap-2 rounded-lg neon-btn">
                   <a href={GOOGLE_FORM_URL} target="_blank" rel="noopener noreferrer">
                     <ExternalLink size={18} />
                     {t("contact.cta.button")}
