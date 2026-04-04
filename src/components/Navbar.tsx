@@ -73,6 +73,15 @@ const Navbar = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="p-1.5 rounded-md text-muted-foreground hover:text-primary transition-colors cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
         </div>
         <div className="flex items-center gap-2 md:hidden">
           {/* Mobile Language Selector */}
