@@ -15,6 +15,7 @@ import {
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { theme, setTheme } = useTheme();
 
   const navLinks = [
     { label: t("nav.about"), href: "#about" },
