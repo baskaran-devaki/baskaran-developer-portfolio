@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { languageNames, Language } from "@/i18n/translations";
