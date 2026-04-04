@@ -56,7 +56,7 @@ const ProjectsSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="p-6 rounded-xl bg-card card-elevated flex flex-col"
+                className="p-6 rounded-xl bg-card card-elevated flex flex-col neon-border"
               >
                 <h3 className="text-lg font-bold text-foreground mb-1">{project.title}</h3>
                 {"institution" in project && project.institution && (
