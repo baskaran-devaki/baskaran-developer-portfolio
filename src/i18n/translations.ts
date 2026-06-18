@@ -38,7 +38,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.learning": "Currently Learning",
 
     // Projects
-    "projects.title": "Projects",
+    "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
     "projects.certificate": "Certificate",
     "projects.sms.title": "Student Management System",
