@@ -7,6 +7,13 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: "Build and Launch Your MVP Workshop Project",
+      institution: "CCBP 4.0 Academy",
+      description: "Successfully completed the Build and Launch Your MVP Workshop project by designing, developing, and deploying a functional Minimum Viable Product (MVP) using modern AI and development tools.",
+      tech: ["Lovable.dev", "Supabase", "Leonardo AI"],
+      certificate: "https://drive.google.com/file/d/1iBK6ffV0RqOm5vZfG52Z0jtCT7yMkvDA/view?usp=drive_link",
+    },
+    {
       title: t("projects.data.title"),
       institution: "CCBP 4.0 Academy",
       description: t("projects.data.desc"),
