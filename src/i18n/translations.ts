@@ -203,7 +203,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.tools": "उपकरण",
     "skills.learning": "वर्तमान में सीख रहा हूं",
 
-    "projects.title": "परियोजनाएं",
+    "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
     "projects.certificate": "प्रमाणपत्र",
     "projects.sms.title": "छात्र प्रबंधन प्रणाली",
