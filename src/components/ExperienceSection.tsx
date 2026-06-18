@@ -110,6 +110,7 @@ const ExperienceSection = () => {
               </a>
             ))}
           </div>
+          <p className="text-center text-xs text-muted-foreground mt-4 italic">Click any certificate card to view certificate</p>
         </motion.div>
       </div>
     </section>
