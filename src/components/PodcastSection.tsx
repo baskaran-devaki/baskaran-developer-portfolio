@@ -84,6 +84,7 @@ const PodcastSection = () => {
         <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
         <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
       </div>
+      <p className="text-center text-xs text-muted-foreground mt-4 italic">Click any card to view details</p>
     </section>
   );
 };

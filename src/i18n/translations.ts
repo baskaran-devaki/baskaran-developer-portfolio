@@ -38,7 +38,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.learning": "Currently Learning",
 
     // Projects
-    "projects.title": "Projects",
+    "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
     "projects.certificate": "Certificate",
     "projects.sms.title": "Student Management System",
@@ -123,7 +123,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.tools": "கருவிகள்",
     "skills.learning": "தற்போது கற்றுக்கொள்கிறேன்",
 
-    "projects.title": "திட்டங்கள்",
+    "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
     "projects.certificate": "சான்றிதழ்",
     "projects.sms.title": "மாணவர் மேலாண்மை அமைப்பு",
@@ -203,7 +203,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.tools": "उपकरण",
     "skills.learning": "वर्तमान में सीख रहा हूं",
 
-    "projects.title": "परियोजनाएं",
+    "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
     "projects.certificate": "प्रमाणपत्र",
     "projects.sms.title": "छात्र प्रबंधन प्रणाली",
@@ -283,7 +283,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.tools": "టూల్స్",
     "skills.learning": "ప్రస్తుతం నేర్చుకుంటున్నాను",
 
-    "projects.title": "ప్రాజెక్టులు",
+    "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
     "projects.certificate": "సర్టిఫికేట్",
     "projects.sms.title": "విద్యార్థి నిర్వహణ వ్యవస్థ",
