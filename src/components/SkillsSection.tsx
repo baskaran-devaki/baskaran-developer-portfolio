@@ -9,22 +9,22 @@ const SkillsSection = () => {
       title: t("skills.frontend"),
       skills: [
         { name: "HTML", level: 90 },
-        { name: "CSS", level: 85 },
-        { name: "JavaScript", level: 80 },
-        { name: "React", level: 75 },
+        { name: "CSS", level: 90 },
+        { name: "JavaScript", level: 91 },
+        { name: "ReactJS", level: 91 },
       ],
     },
     {
       title: t("skills.backend"),
       skills: [
-        { name: "Node.js", level: 70 },
-        { name: "Python", level: 75 },
+        { name: "NodeJS", level: 87 },
+        { name: "Python", level: 87 },
       ],
     },
     {
       title: t("skills.database"),
       skills: [
-        { name: "MySQL", level: 70 },
+        { name: "SQL", level: 92 },
       ],
     },
     {
@@ -38,7 +38,13 @@ const SkillsSection = () => {
     {
       title: t("skills.learning"),
       skills: [
-        { name: "Generative AI", level: 30 },
+        { name: "Generative AI", level: 66 },
+      ],
+    },
+    {
+      title: t("skills.problemsolving"),
+      skills: [
+        { name: "DSA", level: 42 },
       ],
     },
   ];
