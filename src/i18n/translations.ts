@@ -285,6 +285,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "డేటాబేస్",
     "skills.tools": "టూల్స్",
     "skills.learning": "ప్రస్తుతం నేర్చుకుంటున్నాను",
+    "skills.problemsolving": "సమస్య పరిష్కారం",
 
     "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
