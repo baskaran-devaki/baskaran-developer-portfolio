@@ -36,6 +36,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "Database",
     "skills.tools": "Tools",
     "skills.learning": "Currently Learning",
+    "skills.problemsolving": "Problem Solving",
 
     // Projects
     "projects.title": "NxtWave Workshop Projects",
@@ -122,6 +123,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "தரவுத்தளம்",
     "skills.tools": "கருவிகள்",
     "skills.learning": "தற்போது கற்றுக்கொள்கிறேன்",
+    "skills.problemsolving": "சிக்கல் தீர்ப்பு",
 
     "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
@@ -202,6 +204,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "डेटाबेस",
     "skills.tools": "उपकरण",
     "skills.learning": "वर्तमान में सीख रहा हूं",
+    "skills.problemsolving": "समस्या समाधान",
 
     "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
@@ -282,6 +285,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "డేటాబేస్",
     "skills.tools": "టూల్స్",
     "skills.learning": "ప్రస్తుతం నేర్చుకుంటున్నాను",
+    "skills.problemsolving": "సమస్య పరిష్కారం",
 
     "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
