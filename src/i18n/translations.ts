@@ -36,6 +36,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "Database",
     "skills.tools": "Tools",
     "skills.learning": "Currently Learning",
+    "skills.problemsolving": "Problem Solving",
 
     // Projects
     "projects.title": "NxtWave Workshop Projects",
