@@ -123,6 +123,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "தரவுத்தளம்",
     "skills.tools": "கருவிகள்",
     "skills.learning": "தற்போது கற்றுக்கொள்கிறேன்",
+    "skills.problemsolving": "சிக்கல் தீர்ப்பு",
 
     "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
