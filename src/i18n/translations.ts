@@ -204,6 +204,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "skills.database": "डेटाबेस",
     "skills.tools": "उपकरण",
     "skills.learning": "वर्तमान में सीख रहा हूं",
+    "skills.problemsolving": "समस्या समाधान",
 
     "projects.title": "NxtWave Workshop Projects",
     "projects.github": "GitHub",
