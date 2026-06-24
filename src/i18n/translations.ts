@@ -1,10 +1,12 @@
-export type Language = "en" | "ta" | "hi" | "te";
+export type Language = "en" | "ta" | "hi" | "te" | "kn" | "ml";
 
 export const languageNames: Record<Language, string> = {
   en: "English",
   ta: "தமிழ்",
   hi: "हिन्दी",
   te: "తెలుగు",
+  kn: "ಕನ್ನಡ",
+  ml: "മലയാളം",
 };
 
 export const translations: Record<Language, Record<string, string>> = {
