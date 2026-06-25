@@ -12,7 +12,13 @@ const certificates = [
   { title: "Responsive Web Design using Flexbox", date: "Nov 29, 2024", tech: "CSS Flexbox", description: "Created flexible layouts", link: "https://drive.google.com/file/d/1IcYuHRXHKqPlUHjYhYp9p1kniG0D0prk/view?usp=drive_link" },
   { title: "Developer Foundations", date: "Dec 14, 2024", tech: "Git, Command Line Tools", description: "Learned development workflow", link: "https://drive.google.com/file/d/1eKIO8jg8Ffoqb2CE6QU80TUS2PtGuW-p/view?usp=drive_link" },
   { title: "Introduction to Databases", date: "Mar 05, 2024", tech: "SQL", description: "Learned database queries", link: "https://drive.google.com/file/d/1Vm3AQePe7fOzB6IWwyrmHR4yUx9_o7fz/view?usp=drive_link" },
+  { title: "Typewriting English - Junior Grade", date: "Govt. Certified", tech: "English Typing", description: "Certified proficiency in English typewriting at junior level", link: "https://drive.google.com/file/d/1Theo23rwWjA13inr4ANdmoAkaPnKkfDR/view?usp=sharing" },
+  { title: "Typewriting English - Senior Grade", date: "Govt. Certified", tech: "English Typing", description: "Advanced English typewriting proficiency at senior level", link: "https://drive.google.com/file/d/1FovVIiG2Qg2r2_cucuV7pwcw5emCdHv1/view?usp=sharing" },
+  { title: "Typewriting Tamil - Junior Grade", date: "Govt. Certified", tech: "Tamil Typing", description: "Certified proficiency in Tamil typewriting at junior level", link: "https://drive.google.com/file/d/1D4n4sSyHbkF4Tg2T7L8doW6mj-Pvan8Y/view?usp=sharing" },
+  { title: "Typewriting Tamil - Senior Grade", date: "Govt. Certified", tech: "Tamil Typing", description: "Advanced Tamil typewriting proficiency at senior level", link: "https://drive.google.com/file/d/18U5Qs3geH7sWj3O7vfUT13WoeeXjWuxu/view?usp=sharing" },
+  { title: "Certificate of Achievement - Second Class", date: "Awarded", tech: "Academic Excellence", description: "Recognized for outstanding academic performance (Second Class)", link: "https://drive.google.com/file/d/1Y0BlrOjuIA9IbyZAgxzUL7ywIwgOoo9e/view?usp=sharing" },
 ];
+
 
 const ExperienceSection = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
