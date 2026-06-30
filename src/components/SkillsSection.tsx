@@ -25,6 +25,7 @@ const SkillsSection = () => {
       title: t("skills.database"),
       skills: [
         { name: "SQL", level: 90 },
+        { name: "MongoDB", level: 90 },
       ],
     },
     {
